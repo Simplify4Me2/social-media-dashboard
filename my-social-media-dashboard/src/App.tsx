@@ -1,5 +1,5 @@
 import "./App.css";
-import { ToggleSwitch } from "./components/ToggleSwitch";
+import { ToggleSwitch } from "./components";
 
 function App() {
   return (
