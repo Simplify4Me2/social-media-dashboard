@@ -19,3 +19,11 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+.card-bg {
+  background-color: hsl(227, 47%, 96%);
+}
+
+.lime {
+  color: hsl(163, 72%, 41%);
+}
