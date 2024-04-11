@@ -20,10 +20,22 @@
   }
 }
 
-.card-bg {
+.bg-card {
   background-color: hsl(227, 47%, 96%);
 }
 
 .lime {
   color: hsl(163, 72%, 41%);
+}
+
+.dark-blue {
+  color: hsl(230, 17%, 14%);
+}
+
+.grayish-blue {
+  color: hsl(228, 12%, 44%);
+}
+
+.facebook {
+  background-color: hsl(208, 92%, 53%);
 }
