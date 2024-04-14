@@ -29,8 +29,8 @@ interface ICardProps {
             />
             <span className="text-xs font-bold">{handleName}</span>
           </div>
-          <div className="flex flex-col m-3">
-            <span className="text-6xl font-bold">{getFollowersCount()}</span>
+          <div className="flex flex-col m-3 leading-none m-7">
+            <span className="text-6xl font-bold mb-1">{getFollowersCount()}</span>
             <span className="text-xs tracking-widest">{socialMediaProvider === "youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}</span>
           </div>
           <div className="flex flew-row items-center justify-center">
