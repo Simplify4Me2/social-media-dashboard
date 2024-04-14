@@ -32,6 +32,7 @@ function App() {
             handleName="Nathan F."
           />
       </div>
+      <h2 className="text-left font-bold text-2xl leading-none grayish-blue">Overview - Today</h2>
     </>
   );
 }

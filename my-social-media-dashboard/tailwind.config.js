@@ -10,6 +10,7 @@ export default {
         'sans': ['Inter', 'Arial', 'sans-serif'],
       },
       fontSize: {
+        '2xl': '1.540rem',
         '3xl': '1.75rem',
         '6xl': '3.35rem'
       },

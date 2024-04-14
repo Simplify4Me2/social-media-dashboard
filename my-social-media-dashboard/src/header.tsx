@@ -2,7 +2,7 @@ import { ToggleSwitch } from "./components";
 
 export function Header() {
   return (
-    <header className="flex justify-between w-full font-bold">
+    <header className="flex justify-between w-full font-bold mt-2">
       <div>
         <h1 className="text-3xl dark-blue">Social Media Dashboard</h1>
         <h3 className="text-sm text-start m-px grayish-blue">
