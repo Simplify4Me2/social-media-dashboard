@@ -6,6 +6,7 @@ interface ICardProps {
   }
   
   export function Card({ followersCount, followersCountToday, handleName, socialMediaProvider }: ICardProps) {
+    const isFollowersCountTodayPositive : boolean = followersCountToday > 0;
 
     function getFollowersCount() {
         if (followersCount < 10_000)
@@ -30,11 +31,11 @@ interface ICardProps {
           </div>
           <div className="flex flex-col m-3">
             <span className="text-6xl font-bold">{getFollowersCount()}</span>
-            <span className="text-xs tracking-widest">FOLLOWERS</span>
+            <span className="text-xs tracking-widest">{socialMediaProvider === "youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}</span>
           </div>
           <div className="flex flew-row items-center justify-center">
-            <img src="icon-up.svg" className="w-2 h-1 mr-1" />
-            <span className="text-xs lime font-bold">{followersCountToday} Today</span>
+            <img src={`icon-${isFollowersCountTodayPositive ? "up" : "down"}.svg`} className="w-2 h-1 mr-1" />
+            <span className={`text-xs ${isFollowersCountTodayPositive ? "lime-green" : "bright-red"} font-bold`}>{Math.abs(followersCountToday)} Today</span>
           </div>
         </div>
       </div>
