@@ -19,7 +19,7 @@ interface IOverviewCardProps {
     }
 
     return (
-      <div className="bg-card w-64 h-32 rounded-b-sm flex flex-col justify-evenly">
+      <div className="bg-card w-64 h-32 rounded-b-sm flex flex-col justify-evenly mb-6">
         <div className="flex justify-around ">
           <div className="font-bold text-sm mr-10 mt-2">{label}</div>
           <img
