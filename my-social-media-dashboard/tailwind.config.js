@@ -12,6 +12,7 @@ export default {
       fontSize: {
         '2xl': '1.540rem',
         '3xl': '1.75rem',
+        '4xl': '2.00rem',
         '6xl': '3.35rem'
       },
       letterSpacing: {
