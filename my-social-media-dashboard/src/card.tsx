@@ -19,9 +19,9 @@ interface ICardProps {
 
     return (
       <div
-        className={`w-64 h-54 flex flex-col-reverse ${socialMediaProvider} rounded`}
+        className={`flex-1 lg:flex-initial mb-6 lg:w-64 h-54 flex flex-col-reverse ${socialMediaProvider} rounded last:mb-1`}
       >
-        <div className="bg-card w-64 h-53 rounded-b-sm flex flex-col">
+        <div className="bg-card w-80 lg:w-64 h-53 rounded-b-sm flex flex-col">
           <div className="flex flew-row items-center justify-center mt-7">
             <img
               src={`icon-${socialMediaProvider}.svg`}
