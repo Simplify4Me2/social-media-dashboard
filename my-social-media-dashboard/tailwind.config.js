@@ -4,7 +4,11 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'selector',
   theme: {
+    colors: {
+      foo: 'hsl(var(--color-foo) / <alpha-value>)'
+    },
     extend: {
       fontFamily: {
         'sans': ['Inter', 'Arial', 'sans-serif'],
@@ -15,10 +19,13 @@ export default {
         '2xl': '1.540rem',
         '3xl': '1.75rem',
         '4xl': '2.00rem',
-        '6xl': '3.50rem'
+        '6xl': '3.50rem',
       },
       letterSpacing: {
         'widest': '0.415em'
+      },
+      maxWidth: {
+        '7xl': '73.75rem'
       },
       spacing: {
         '53': '13.25rem',

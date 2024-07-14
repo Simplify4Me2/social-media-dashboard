@@ -5,7 +5,8 @@ import { Header } from "./header";
 
 function App() {
   return (
-    <body className="lg:px-1.5">
+    <div className="max-w-7xl p-[1.6rem] text-center my-0 mx-auto lg:px-[1.975rem]">
+    {/* <div className="max-w-7xl p-[1.6rem] text-center my-0 mx-auto lg:px-[1.975rem] dark dark:bg-foo"> */}
       <Header />
       <div className="mt-6 lg:mt-11 mb-11 lg:mb-5 mx-0.5 flex justify-between flex-wrap">
         <Card
@@ -46,7 +47,7 @@ function App() {
         <OverviewCard socialMediaProvider="youtube" label="Likes" count={107} percentage={-19} />
         <OverviewCard socialMediaProvider="youtube" label="Total Views" count={1407} percentage={-12} />
       </div>
-    </body>
+    </div>
   );
 }
 
