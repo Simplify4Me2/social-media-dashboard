@@ -7,7 +7,7 @@ function App() {
   return (
     <body className="lg:px-1.5">
       <Header />
-      <div className="mt-6 lg:mt-11 mb-11 mx-0.5 flex justify-between flex-wrap">
+      <div className="mt-6 lg:mt-11 mb-11 lg:mb-5 mx-0.5 flex justify-between flex-wrap">
         <Card
           socialMediaProvider="facebook"
           followersCount={1987}
