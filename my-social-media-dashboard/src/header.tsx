@@ -1,6 +1,6 @@
-import { ToggleSwitch } from "./components";
+import { PropsWithChildren } from "react";
 
-export function Header() {
+export function Header({ children }: PropsWithChildren) {
   return (
     <header className="flex flex-wrap justify-between w-full font-bold mt-1.5">
       <div>
@@ -11,8 +11,7 @@ export function Header() {
       </div>
       <hr className="lg:hidden border-black w-full mt-5 mb-4" />
       <div className="flex items-center mb-3 mr-1 w-full lg:w-fit justify-between">
-        <span className="mr-3 mt-1 text-sm grayish-blue lg:text-slate-400">Dark Mode</span>
-        <ToggleSwitch />
+        {children}
       </div>
     </header>
   );
