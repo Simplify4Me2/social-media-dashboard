@@ -7,7 +7,18 @@ export default {
   darkMode: 'selector',
   theme: {
     colors: {
-      foo: 'hsl(var(--color-foo) / <alpha-value>)'
+      blue: {
+        100: 'hsl(var(--color-blue-100) / <alpha-value>)',
+        200: 'hsl(var(--color-blue-200) / <alpha-value>)',
+        400: 'hsl(var(--color-blue-400) / <alpha-value>)',
+        700: 'hsl(var(--color-blue-700) / <alpha-value>)',
+      },
+      'dark-blue': {
+        400: 'hsl(var(--color-dark-blue-400) / <alpha-value>)',
+        600: 'hsl(var(--color-dark-blue-600) / <alpha-value>)',
+        800: 'hsl(var(--color-dark-blue-800) / <alpha-value>)',
+      },
+      white: 'hsl(var(--color-white) / <alpha-value>)'
     },
     extend: {
       fontFamily: {

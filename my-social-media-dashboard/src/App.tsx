@@ -10,8 +10,8 @@ function App() {
   const {isEnabled: isDarkModeEnabled, toggle: toggleDarkMode} = useDarkModeState();
 
   return (
-    <div className={`${isDarkModeEnabled ? 'dark' : ''}`}>
-      <div className="max-w-7xl p-[1.6rem] text-center my-0 mx-auto lg:px-[1.975rem] dark:bg-foo">
+    <div className={`h-screen ${isDarkModeEnabled ? 'dark' : ''} dark:bg-dark-blue-800`}>
+      <div className="max-w-7xl p-[1.6rem] text-center my-0 mx-auto lg:px-[1.975rem]">
         <Header>
           <span className="mr-3 mt-1 text-sm grayish-blue lg:text-slate-400">Dark Mode</span>
           <ToggleSwitch isEnabled={isDarkModeEnabled} onChange={toggleDarkMode} />

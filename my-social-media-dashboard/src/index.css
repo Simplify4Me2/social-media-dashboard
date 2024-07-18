@@ -4,7 +4,14 @@
 
 @layer base {
   :root {
-    --color-foo: 198deg 17% 14%;
+    --color-blue-100: 225deg 100% 98%;
+    --color-blue-200: 227deg 47% 96%;
+    --color-blue-400: 228deg 34% 66%;
+    --color-blue-700: 228deg 12% 44%;
+    --color-dark-blue-400: 228deg 28% 20%;
+    --color-dark-blue-600: 232deg 19% 15%;
+    --color-dark-blue-800: 230deg 17% 14%;
+    --color-white: 0deg 0% 100%;
   }
 }
 
