@@ -38,7 +38,7 @@ interface IOverviewCardProps {
             />
             <span
               className={`text-xs ${
-                isPercentagePositive ? "lime-green" : "bright-red"
+                isPercentagePositive ? "text-lime" : "text-red"
               } font-bold`}
             >
               {Math.abs(percentage)}%

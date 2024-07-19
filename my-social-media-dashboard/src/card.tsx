@@ -35,7 +35,7 @@ interface ICardProps {
           </div>
           <div className="flex flew-row items-center justify-center mt-6">
             <img src={`icon-${isFollowersCountTodayPositive ? "up" : "down"}.svg`} className="w-2 h-1 mr-1" />
-            <span className={`text-xs ${isFollowersCountTodayPositive ? "lime-green" : "bright-red"} font-bold`}>{Math.abs(followersCountToday)} Today</span>
+            <span className={`text-xs ${isFollowersCountTodayPositive ? "text-lime" : "text-red"} font-bold`}>{Math.abs(followersCountToday)} Today</span>
           </div>
         </div>
       </div>

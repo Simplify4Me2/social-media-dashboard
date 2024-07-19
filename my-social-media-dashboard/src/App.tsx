@@ -13,7 +13,7 @@ function App() {
     <div className={`h-screen ${isDarkModeEnabled ? 'dark' : ''} dark:bg-dark-blue-800`}>
       <div className="max-w-7xl p-[1.6rem] text-center my-0 mx-auto lg:px-[1.975rem]">
         <Header>
-          <span className="mr-3 mt-1 text-sm grayish-blue lg:text-slate-400">Dark Mode</span>
+          <span className="mr-3 mt-1 text-sm text-blue-700 lg:text-slate-400">Dark Mode</span>
           <ToggleSwitch isEnabled={isDarkModeEnabled} onChange={toggleDarkMode} />
         </Header>
         <div className="mt-6 lg:mt-11 mb-11 lg:mb-5 mx-0.5 flex justify-between flex-wrap">
@@ -42,7 +42,7 @@ function App() {
             handleName="Nathan F."
           />
         </div>
-        <h2 className="text-left font-bold text-2xl leading-none grayish-blue pt-1">
+        <h2 className="text-left font-bold text-2xl leading-none text-blue-700 pt-1">
           Overview - Today
         </h2>
         <div className="mt-6 my-11 mx-0.5 flex flex-wrap justify-between">
