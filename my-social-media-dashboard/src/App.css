@@ -13,19 +13,3 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-
-.facebook {
-  background-color: hsl(208, 92%, 53%);
-}
-
-.twitter {
-  background-color: hsl(203, 89%, 53%);
-}
-
-.instagram {
-  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
-}
-
-.youtube {
-  background-color: hsl(348, 97%, 39%);
-}

@@ -7,12 +7,15 @@ export default {
   darkMode: 'selector',
   theme: {
     colors: {
+      'azure-blue': 'hsl(var(--color-azure-blue) / <alpha-value>)',
       blue: {
         100: 'hsl(var(--color-blue-100) / <alpha-value>)',
         200: 'hsl(var(--color-blue-200) / <alpha-value>)',
         400: 'hsl(var(--color-blue-400) / <alpha-value>)',
         700: 'hsl(var(--color-blue-700) / <alpha-value>)',
       },
+      'candy-apple-red': 'hsl(var(--color-candy-apple-red) / <alpha-value>)',
+      'chili-red': 'hsl(var(--color-chili-red) / <alpha-value>)',
       'dark-blue': {
         400: 'hsl(var(--color-dark-blue-400) / <alpha-value>)',
         600: 'hsl(var(--color-dark-blue-600) / <alpha-value>)',
@@ -20,7 +23,9 @@ export default {
       },
       lime: 'hsl(var(--color-lime) / <alpha-value>)',
       red: 'hsl(var(--color-red) / <alpha-value>)',
+      'sky-blue': 'hsl(var(--color-sky-blue) / <alpha-value>)',
       white: 'hsl(var(--color-white) / <alpha-value>)',
+      yellow: 'hsl(var(--color-yellow) / <alpha-value>)',
     },
     extend: {
       fontFamily: {
