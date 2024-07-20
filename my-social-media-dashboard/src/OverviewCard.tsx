@@ -21,14 +21,14 @@ interface IOverviewCardProps {
     return (
       <div className="bg-blue-200 dark:bg-dark-blue-400 flex-1 lg:flex-initial min-w-64 w-64 h-32 rounded-b-md flex flex-col justify-evenly mb-4 lg:mb-5 rounded">
         <div className="flex justify-between">
-          <div className="font-bold text-sm ml-6 mt-3">{label}</div>
+          <div className="font-bold text-sm dark:text-blue-400 ml-6 mt-3">{label}</div>
           <img
             src={`icon-${socialMediaProvider}.svg`}
             className="w-5 h-5 mt-3 mr-8"
           />
         </div>
         <div className="flex justify-between">
-          <div className="font-bold text-4xl ml-6">{getCount()}</div>
+          <div className="font-bold text-4xl dark:text-white ml-6">{getCount()}</div>
           <div className="flex flew-row items-center justify-center mr-8 mt-3">
             <img
               src={`icon-${
