@@ -21,13 +21,19 @@ export default {
         600: 'hsl(var(--color-dark-blue-600) / <alpha-value>)',
         800: 'hsl(var(--color-dark-blue-800) / <alpha-value>)',
       },
+      gray: 'hsl(var(--color-gray) / <alpha-value>)',
+      green: 'hsl(var(--color-green) / <alpha-value>)',
       lime: 'hsl(var(--color-lime) / <alpha-value>)',
       red: 'hsl(var(--color-red) / <alpha-value>)',
       'sky-blue': 'hsl(var(--color-sky-blue) / <alpha-value>)',
+      'true-blue': 'hsl(var(--color-true-blue) / <alpha-value>)',
       white: 'hsl(var(--color-white) / <alpha-value>)',
       yellow: 'hsl(var(--color-yellow) / <alpha-value>)',
     },
     extend: {
+      boxShadow: {
+        'md': '0 0 3px'
+      },
       fontFamily: {
         'sans': ['Inter', 'Arial', 'sans-serif'],
       },
