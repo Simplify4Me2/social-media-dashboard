@@ -15,7 +15,7 @@ function App() {
         isDarkModeEnabled ? "dark" : ""
       } dark:bg-dark-blue-800`}
     >
-      <div className="dark:bg-dark-blue-600 h-64">
+      <div className="dark:bg-dark-blue-600 lg:h-64">
         <div className="max-w-7xl p-[1.6rem] text-center my-0 mx-auto lg:px-[1.975rem]">
           <Header>
             <span className="mr-3 mt-1 text-sm text-blue-700 dark:text-blue-400 lg:text-slate-400">
