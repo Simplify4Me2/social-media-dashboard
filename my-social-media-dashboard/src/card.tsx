@@ -44,9 +44,12 @@ export function Card({
         <div className="flex flew-row items-center justify-center mt-7">
           <img
             src={`icon-${socialMediaProvider}.svg`}
+            alt={`${socialMediaProvider} icon`}
             className="w-5 h-5 mr-2"
           />
-          <span className="text-xs dark:text-blue-400 font-bold">{handleName}</span>
+          <span className="text-xs dark:text-blue-400 font-bold">
+            {handleName}
+          </span>
         </div>
         <div className="flex flex-col justify-center">
           <span className="text-6xl dark:text-white font-bold tracking-tighter leading-none pt-6">
@@ -59,6 +62,7 @@ export function Card({
         <div className="flex flew-row items-center justify-center mt-6">
           <img
             src={`icon-${isFollowersCountTodayPositive ? "up" : "down"}.svg`}
+            alt={`${isFollowersCountTodayPositive ? "up" : "down"} icon`}
             className="w-2 h-1 mr-1"
           />
           <span
