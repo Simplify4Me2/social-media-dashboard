@@ -40,7 +40,7 @@ export function Card({
     <div
       className={`${resolveBackgroundColor()} flex-1 lg:flex-initial mb-6 lg:w-64 h-54 flex flex-col-reverse rounded last:mb-1`}
     >
-      <div className="bg-blue-200 dark:bg-dark-blue-400 w-80 lg:w-64 h-53 rounded-b-sm flex flex-col">
+      <div className="w-80 lg:w-64 h-53 rounded-b-sm flex flex-col bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer">
         <div className="flex flew-row items-center justify-center mt-7">
           <img
             src={`icon-${socialMediaProvider}.svg`}

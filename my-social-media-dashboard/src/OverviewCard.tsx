@@ -19,7 +19,7 @@ interface IOverviewCardProps {
     }
 
     return (
-      <div className="bg-blue-200 dark:bg-dark-blue-400 flex-1 lg:flex-initial min-w-64 w-64 h-32 rounded-b-md flex flex-col justify-evenly mb-4 lg:mb-5 rounded">
+      <div className="flex-1 lg:flex-initial min-w-64 w-64 h-32 rounded-b-md flex flex-col justify-evenly mb-4 lg:mb-5 rounded bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer">
         <div className="flex justify-between">
           <div className="font-bold text-sm dark:text-blue-400 ml-6 mt-3">{label}</div>
           <img
