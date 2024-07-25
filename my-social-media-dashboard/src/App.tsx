@@ -10,7 +10,7 @@ function App() {
     useDarkModeState();
 
   return (
-    <div
+    <main
       className={`h-full lg:h-screen ${
         isDarkModeEnabled ? "dark" : ""
       } dark:bg-dark-blue-800`}
@@ -107,7 +107,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
