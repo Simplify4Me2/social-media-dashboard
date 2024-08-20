@@ -5,7 +5,104 @@ import { ToggleSwitch } from "./components";
 import { Header } from "./header";
 import { useDarkModeState } from "./hooks";
 
+interface SocialMediaData {
+  provider: "facebook" | "twitter" | "instagram" | "youtube";
+  handle: string;
+  count: number;
+  countToday: number;
+}
+
+const socialMediaData: SocialMediaData[] = [
+  {
+    provider: "facebook",
+    handle: "@nathanf",
+    count: 1987,
+    countToday: 12,
+  },
+  {
+    provider: "twitter",
+    handle: "@nathanf",
+    count: 1044,
+    countToday: 99,
+  },
+  {
+    provider: "instagram",
+    handle: "@realnathanf",
+    count: 11000,
+    countToday: 1099,
+  },
+  {
+    provider: "youtube",
+    handle: "Nathan F.",
+    count: 8239,
+    countToday: -144,
+  },
+];
+
+interface SocialMediaOverviewData {
+  provider: "facebook" | "twitter" | "instagram" | "youtube";
+  label: string;
+  count: number;
+  percentage: number;
+}
+
+const socialMediaOverviewData: SocialMediaOverviewData[] = [
+  {
+    provider: "facebook",
+    label: "Page Views",
+    count: 87,
+    percentage: 3
+  },
+  {
+    provider: "facebook",
+    label: "Likes",
+    count: 52,
+    percentage: -2
+  },
+  {
+    provider: "instagram",
+    label: "Likes",
+    count: 5462,
+    percentage: 2257
+  },
+  {
+    provider: "instagram",
+    label: "Profile Views",
+    count: 52000,
+    percentage: 1375
+  },
+  {
+    provider: "twitter",
+    label: "Retweets",
+    count: 117,
+    percentage: 303
+  },
+  {
+    provider: "twitter",
+    label: "Likes",
+    count: 507,
+    percentage: 553
+  },
+  {
+    provider: "youtube",
+    label: "Likes",
+    count: 107,
+    percentage: -19
+  },
+  {
+    provider: "youtube",
+    label: "Total Views",
+    count: 1407,
+    percentage: -12
+  }
+]
+
 function App() {
+  return <New />;
+  return <Old />;
+}
+
+function Old() {
   const { isEnabled: isDarkModeEnabled, toggle: toggleDarkMode } =
     useDarkModeState();
 
@@ -108,6 +205,41 @@ function App() {
         </div>
       </div>
     </main>
+  );
+}
+
+function New() {
+  const { isEnabled: isDarkModeEnabled, toggle: toggleDarkMode } =
+    useDarkModeState();
+
+  return (
+    <>
+      <main
+        className={`h-full lg:h-screen ${
+          isDarkModeEnabled ? "dark" : ""
+        } dark:bg-dark-blue-800 flex flex-col justify-center`}
+      >
+        {/* <div className="absolute bg-dark-blue-600 lg:h-64 w-full" /> */}
+        <Header>
+          <span className="mr-3 mt-1 text-sm text-blue-700 dark:text-blue-400 lg:text-slate-400">
+            Dark Mode
+          </span>
+          <ToggleSwitch
+            isEnabled={isDarkModeEnabled}
+            onChange={toggleDarkMode}
+          />
+        </Header>
+        <section className="grid grid-cols-1 gap-4 my-4 mx-6">
+          {socialMediaData.map(item => <Card socialMediaProvider={item.provider} handleName={item.handle} followersCount={item.count} followersCountToday={item.countToday} />)}
+        </section>
+        <section>
+          <h2 className="text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400 pt-1">
+            Overview - Today
+          </h2>
+          {socialMediaOverviewData.map(item => <OverviewCard socialMediaProvider={item.provider} label={item.label} count={item.count} percentage={item.percentage} />)}
+        </section>
+      </main>
+    </>
   );
 }
 

@@ -11,6 +11,30 @@ export function Card({
   handleName,
   socialMediaProvider,
 }: ICardProps) {
+  return (
+    <New
+      followersCount={followersCount}
+      followersCountToday={followersCountToday}
+      handleName={handleName}
+      socialMediaProvider={socialMediaProvider}
+    />
+  );
+  return (
+    <Old
+      followersCount={followersCount}
+      followersCountToday={followersCountToday}
+      handleName={handleName}
+      socialMediaProvider={socialMediaProvider}
+    />
+  );
+}
+
+function Old({
+  followersCount,
+  followersCountToday,
+  handleName,
+  socialMediaProvider,
+}: ICardProps) {
   const isFollowersCountTodayPositive: boolean = followersCountToday > 0;
 
   function getFollowersCount() {
@@ -75,5 +99,54 @@ export function Card({
         </div>
       </div>
     </div>
+  );
+}
+
+function New({
+  followersCount,
+  followersCountToday,
+  handleName,
+  socialMediaProvider,
+}: ICardProps) {
+  const isFollowersCountTodayPositive: boolean = followersCountToday > 0;
+
+  function getFollowersCount() {
+    if (followersCount < 10_000) return followersCount;
+
+    const thousands = followersCount / 1000;
+
+    return `${thousands}k`;
+  }
+
+  function resolveDecorationColor() {
+    switch (socialMediaProvider) {
+      case "facebook":
+        return "before:bg-azure-blue";
+      case "instagram":
+        return "before:bg-gradient-to-r before:from-yellow before:to-candy-apple-red";
+      case "twitter":
+        return "before:bg-sky-blue";
+      case "youtube":
+        return "before:bg-chili-red";
+      default:
+        return "before:bg-white";
+    }
+  }
+  return (
+    <li
+      className={`list-none before:block ${resolveDecorationColor()} before:h-1 bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer`}
+    >
+      <span className="flex">
+        <img
+            src={`icon-${socialMediaProvider}.svg`}
+            alt={`${socialMediaProvider} icon`}
+            className="w-5 h-5 mr-2"
+          />
+        <p className="text-xs dark:text-blue-400 font-bold">{handleName}</p>
+      </span>
+      <strong>{followersCount}</strong>
+      <p>FOLLOWERS</p>
+      <small>{followersCountToday}</small>
+    </li>
   );
 }
