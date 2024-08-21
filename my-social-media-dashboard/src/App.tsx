@@ -51,51 +51,51 @@ const socialMediaOverviewData: SocialMediaOverviewData[] = [
     provider: "facebook",
     label: "Page Views",
     count: 87,
-    percentage: 3
+    percentage: 3,
   },
   {
     provider: "facebook",
     label: "Likes",
     count: 52,
-    percentage: -2
+    percentage: -2,
   },
   {
     provider: "instagram",
     label: "Likes",
     count: 5462,
-    percentage: 2257
+    percentage: 2257,
   },
   {
     provider: "instagram",
     label: "Profile Views",
     count: 52000,
-    percentage: 1375
+    percentage: 1375,
   },
   {
     provider: "twitter",
     label: "Retweets",
     count: 117,
-    percentage: 303
+    percentage: 303,
   },
   {
     provider: "twitter",
     label: "Likes",
     count: 507,
-    percentage: 553
+    percentage: 553,
   },
   {
     provider: "youtube",
     label: "Likes",
     count: 107,
-    percentage: -19
+    percentage: -19,
   },
   {
     provider: "youtube",
     label: "Total Views",
     count: 1407,
-    percentage: -12
-  }
-]
+    percentage: -12,
+  },
+];
 
 function App() {
   return <New />;
@@ -229,14 +229,30 @@ function New() {
             onChange={toggleDarkMode}
           />
         </Header>
-        <section className="grid grid-cols-1 gap-4 my-4 mx-6">
-          {socialMediaData.map(item => <Card socialMediaProvider={item.provider} handleName={item.handle} followersCount={item.count} followersCountToday={item.countToday} />)}
+        <section className="my-4 mx-6">
+          <ul className="grid grid-cols-1 gap-6">
+            {socialMediaData.map((item) => (
+              <Card
+                socialMediaProvider={item.provider}
+                handleName={item.handle}
+                followersCount={item.count}
+                followersCountToday={item.countToday}
+              />
+            ))}
+          </ul>
         </section>
         <section>
           <h2 className="text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400 pt-1">
             Overview - Today
           </h2>
-          {socialMediaOverviewData.map(item => <OverviewCard socialMediaProvider={item.provider} label={item.label} count={item.count} percentage={item.percentage} />)}
+          {socialMediaOverviewData.map((item) => (
+            <OverviewCard
+              socialMediaProvider={item.provider}
+              label={item.label}
+              count={item.count}
+              percentage={item.percentage}
+            />
+          ))}
         </section>
       </main>
     </>

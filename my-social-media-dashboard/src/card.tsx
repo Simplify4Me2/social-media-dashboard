@@ -144,7 +144,7 @@ function New({
   }
   return (
     <li
-      className={`list-none ${resolveDecorationStyle()} grid  bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer`}
+      className={`list-none h-54 ${resolveDecorationStyle()} grid bg-blue-200 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer rounded-b-lg`}
     >
       <span className="flex justify-center">
         <img
