@@ -146,7 +146,7 @@ function New({
     <li
       className={`list-none h-54 ${resolveDecorationStyle()} grid bg-blue-200 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer rounded-b-lg`}
     >
-      <span className="flex justify-center">
+      <span className="flex justify-center items-center ">
         <img
           src={`icon-${socialMediaProvider}.svg`}
           alt={`${socialMediaProvider} icon`}
@@ -154,13 +154,13 @@ function New({
         />
         <p className="text-xs dark:text-blue-400 font-bold">{handleName}</p>
       </span>
-      <strong className="text-center text-6xl dark:text-white font-bold tracking-tighter">
+      <strong className="text-center text-6xl dark:text-white font-bold tracking-tigh">
         {getFollowersCount()}
       </strong>
       <p className="text-center text-xs text-blue-700 dark:text-blue-400 tracking-widest">
         {socialMediaProvider === "youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}
       </p>
-      <span className="flex justify-center items-center">
+      <span className="flex justify-center items-center ">
         <img
           src={`icon-${isFollowersCountTodayPositive ? "up" : "down"}.svg`}
           alt={`${isFollowersCountTodayPositive ? "up" : "down"} icon`}
