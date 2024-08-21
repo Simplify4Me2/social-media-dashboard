@@ -118,35 +118,62 @@ function New({
     return `${thousands}k`;
   }
 
-  function resolveDecorationColor() {
+  function resolveDecorationStyle(): string {
+    let classNames = "before:block before:h-1 before:rounded-t-lg ";
+
     switch (socialMediaProvider) {
       case "facebook":
-        return "before:bg-azure-blue";
+        classNames += "before:bg-azure-blue";
+        break;
       case "instagram":
-        return "before:bg-gradient-to-r before:from-yellow before:to-candy-apple-red";
+        classNames +=
+          "before:bg-gradient-to-r before:from-yellow before:to-candy-apple-red";
+        break;
       case "twitter":
-        return "before:bg-sky-blue";
+        classNames += "before:bg-sky-blue";
+        break;
       case "youtube":
-        return "before:bg-chili-red";
+        classNames += "before:bg-chili-red";
+        break;
       default:
-        return "before:bg-white";
+        classNames += "before:bg-white";
+        break;
     }
+
+    return classNames;
   }
   return (
     <li
-      className={`list-none before:block ${resolveDecorationColor()} before:h-1 bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer`}
+      className={`list-none ${resolveDecorationStyle()} grid  bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer`}
     >
-      <span className="flex">
+      <span className="flex justify-center">
         <img
-            src={`icon-${socialMediaProvider}.svg`}
-            alt={`${socialMediaProvider} icon`}
-            className="w-5 h-5 mr-2"
-          />
+          src={`icon-${socialMediaProvider}.svg`}
+          alt={`${socialMediaProvider} icon`}
+          className="w-5 h-5 mr-2"
+        />
         <p className="text-xs dark:text-blue-400 font-bold">{handleName}</p>
       </span>
-      <strong>{followersCount}</strong>
-      <p>FOLLOWERS</p>
-      <small>{followersCountToday}</small>
+      <strong className="text-center text-6xl dark:text-white font-bold tracking-tighter">
+        {getFollowersCount()}
+      </strong>
+      <p className="text-center text-xs text-blue-700 dark:text-blue-400 tracking-widest">
+        {socialMediaProvider === "youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}
+      </p>
+      <span className="flex justify-center items-center">
+        <img
+          src={`icon-${isFollowersCountTodayPositive ? "up" : "down"}.svg`}
+          alt={`${isFollowersCountTodayPositive ? "up" : "down"} icon`}
+          className="w-2 h-1 mr-1"
+        />
+        <small
+          className={`text-xs ${
+            isFollowersCountTodayPositive ? "text-lime" : "text-red"
+          } font-bold`}
+        >
+          {Math.abs(followersCountToday)} Today
+        </small>
+      </span>
     </li>
   );
 }
