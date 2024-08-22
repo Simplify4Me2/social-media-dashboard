@@ -97,21 +97,28 @@ function New({
   }
 
   return (
-    <li className="h-32 rounded bg-blue-200 dark:bg-dark-blue-400 hover:bg-blue-400 hover:dark:bg-blue-700 hover:cursor-pointer">
-      <em>{label}</em>
+    <li className="grid grid-cols-2 h-32 rounded bg-blue-200 dark:bg-dark-blue-400 hover:bg-blue-400 hover:dark:bg-blue-700 hover:cursor-pointer">
+      <p className="font-bold text-sm text-blue-700 dark:text-blue-400">{label}</p>
       <img
         src={`icon-${socialMediaProvider}.svg`}
         alt={`${socialMediaProvider} icon`}
         className="w-5 h-5 mt-3 mr-8"
       />
-      <strong>{getCount()}</strong>
-      <p
-        className={`text-xs ${
-          isPercentagePositive ? "text-lime" : "text-red"
-        } font-bold`}
-      >
-        {Math.abs(percentage)}%
-      </p>
+      <strong className="font-bold text-4xl dark:text-white">{getCount()}</strong>
+      <span className="flex justify-center items-center">
+        <img
+          src={`icon-${isPercentagePositive ? "up" : "down"}.svg`}
+          alt={`${isPercentagePositive ? "up" : "down"} icon`}
+          className="w-2 h-1 m-0.5"
+        />
+        <p
+          className={`text-xs ${
+            isPercentagePositive ? "text-lime" : "text-red"
+          } font-bold`}
+        >
+          {Math.abs(percentage)}%
+        </p>
+      </span>
     </li>
   );
 }
