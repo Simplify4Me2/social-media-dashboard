@@ -4,7 +4,7 @@ export function Header({ children }: PropsWithChildren) {
   return (
     <header className="flex flex-wrap justify-between font-bold m-6 mt-8">
       <div>
-        <h1 className="text-xl lg:text-3xl text-dark-blue-800 dark:text-white pt-1.5 font-bold">
+        <h1 className="text-xl lg:text-3xl text-dark-blue-800 dark:text-white pt-1.5 font-bold leading-6">
           Social Media Dashboard
         </h1>
         <h2 className="text-sm text-start m-px text-blue-700 dark:text-blue-400 mt-0.5">

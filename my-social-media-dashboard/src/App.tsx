@@ -98,8 +98,56 @@ const socialMediaOverviewData: SocialMediaOverviewData[] = [
 ];
 
 function App() {
-  return <New />;
-  return <Old />;
+  const { isEnabled: isDarkModeEnabled, toggle: toggleDarkMode } =
+    useDarkModeState();
+
+  return (
+    <>
+      <main
+        className={`h-full lg:h-screen ${
+          isDarkModeEnabled ? "dark" : ""
+        } dark:bg-dark-blue-800 flex flex-col`}
+      >
+        {/* <div className="absolute bg-dark-blue-600 lg:h-64 w-full" /> */}
+        <Header>
+          <span className="mr-3 mt-1 text-sm text-blue-700 dark:text-blue-400 lg:text-slate-400">
+            Dark Mode
+          </span>
+          <ToggleSwitch
+            isEnabled={isDarkModeEnabled}
+            onChange={toggleDarkMode}
+          />
+        </Header>
+        <section className="my-4 mx-6">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {socialMediaData.map((item) => (
+              <Card
+                socialMediaProvider={item.provider}
+                handleName={item.handle}
+                followersCount={item.count}
+                followersCountToday={item.countToday}
+              />
+            ))}
+          </ul>
+        </section>
+        <section className="my-4 mx-6">
+          <h2 className="mt-4 mb-8 text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400">
+            Overview - Today
+          </h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+            {socialMediaOverviewData.map((item) => (
+              <OverviewCard
+                socialMediaProvider={item.provider}
+                label={item.label}
+                count={item.count}
+                percentage={item.percentage}
+              />
+            ))}
+          </ul>
+        </section>
+      </main>
+    </>
+  );
 }
 
 function Old() {
@@ -205,59 +253,6 @@ function Old() {
         </div>
       </div>
     </main>
-  );
-}
-
-function New() {
-  const { isEnabled: isDarkModeEnabled, toggle: toggleDarkMode } =
-    useDarkModeState();
-
-  return (
-    <>
-      <main
-        className={`h-full lg:h-screen ${
-          isDarkModeEnabled ? "dark" : ""
-        } dark:bg-dark-blue-800 flex flex-col justify-center`}
-      >
-        {/* <div className="absolute bg-dark-blue-600 lg:h-64 w-full" /> */}
-        <Header>
-          <span className="mr-3 mt-1 text-sm text-blue-700 dark:text-blue-400 lg:text-slate-400">
-            Dark Mode
-          </span>
-          <ToggleSwitch
-            isEnabled={isDarkModeEnabled}
-            onChange={toggleDarkMode}
-          />
-        </Header>
-        <section className="my-4 mx-6">
-          <ul className="grid grid-cols-1 gap-6">
-            {socialMediaData.map((item) => (
-              <Card
-                socialMediaProvider={item.provider}
-                handleName={item.handle}
-                followersCount={item.count}
-                followersCountToday={item.countToday}
-              />
-            ))}
-          </ul>
-        </section>
-        <section className="my-4 mx-6">
-          <h2 className="mt-4 mb-8 text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400">
-            Overview - Today
-          </h2>
-          <ul className="grid grid-cols-1 gap-3">
-            {socialMediaOverviewData.map((item) => (
-              <OverviewCard
-                socialMediaProvider={item.provider}
-                label={item.label}
-                count={item.count}
-                percentage={item.percentage}
-              />
-            ))}
-          </ul>
-        </section>
-      </main>
-    </>
   );
 }
 
