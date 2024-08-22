@@ -11,6 +11,30 @@ export function OverviewCard({
   count,
   percentage,
 }: IOverviewCardProps) {
+  return (
+    <New
+      socialMediaProvider={socialMediaProvider}
+      label={label}
+      count={count}
+      percentage={percentage}
+    />
+  );
+  return (
+    <Old
+      socialMediaProvider={socialMediaProvider}
+      label={label}
+      count={count}
+      percentage={percentage}
+    />
+  );
+}
+
+function Old({
+  socialMediaProvider,
+  label,
+  count,
+  percentage,
+}: IOverviewCardProps) {
   const isPercentagePositive: boolean = percentage > 0;
 
   function getCount() {
@@ -53,5 +77,41 @@ export function OverviewCard({
         </div>
       </div>
     </div>
+  );
+}
+
+function New({
+  socialMediaProvider,
+  label,
+  count,
+  percentage,
+}: IOverviewCardProps) {
+  const isPercentagePositive: boolean = percentage > 0;
+
+  function getCount() {
+    if (count < 10_000) return count;
+
+    const thousands = count / 1000;
+
+    return `${thousands}k`;
+  }
+
+  return (
+    <li className="h-32 rounded bg-blue-200 dark:bg-dark-blue-400 hover:bg-blue-400 hover:dark:bg-blue-700 hover:cursor-pointer">
+      <em>{label}</em>
+      <img
+        src={`icon-${socialMediaProvider}.svg`}
+        alt={`${socialMediaProvider} icon`}
+        className="w-5 h-5 mt-3 mr-8"
+      />
+      <strong>{getCount()}</strong>
+      <p
+        className={`text-xs ${
+          isPercentagePositive ? "text-lime" : "text-red"
+        } font-bold`}
+      >
+        {Math.abs(percentage)}%
+      </p>
+    </li>
   );
 }

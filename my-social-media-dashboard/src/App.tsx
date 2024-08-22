@@ -241,18 +241,20 @@ function New() {
             ))}
           </ul>
         </section>
-        <section>
-          <h2 className="text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400 pt-1">
+        <section className="my-4 mx-6">
+          <h2 className="mt-4 mb-8 text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400">
             Overview - Today
           </h2>
-          {socialMediaOverviewData.map((item) => (
-            <OverviewCard
-              socialMediaProvider={item.provider}
-              label={item.label}
-              count={item.count}
-              percentage={item.percentage}
-            />
-          ))}
+          <ul className="grid grid-cols-1 gap-3">
+            {socialMediaOverviewData.map((item) => (
+              <OverviewCard
+                socialMediaProvider={item.provider}
+                label={item.label}
+                count={item.count}
+                percentage={item.percentage}
+              />
+            ))}
+          </ul>
         </section>
       </main>
     </>
