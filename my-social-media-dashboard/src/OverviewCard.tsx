@@ -97,15 +97,15 @@ function New({
   }
 
   return (
-    <li className="grid grid-cols-2 h-32 rounded bg-blue-200 dark:bg-dark-blue-400 hover:bg-blue-400 hover:dark:bg-blue-700 hover:cursor-pointer">
-      <p className="font-bold text-sm text-blue-700 dark:text-blue-400">{label}</p>
+    <li className="grid grid-cols-2 items-center h-32 rounded bg-blue-200 dark:bg-dark-blue-400 hover:bg-blue-400 hover:dark:bg-blue-700 hover:cursor-pointer">
+      <p className="font-bold text-sm text-blue-700 dark:text-blue-400 ml-6 mt-4">{label}</p>
       <img
         src={`icon-${socialMediaProvider}.svg`}
         alt={`${socialMediaProvider} icon`}
-        className="w-5 h-5 mt-3 mr-8"
+        className="w-5 h-5 mt-4 ml-28"
       />
-      <strong className="font-bold text-4xl dark:text-white">{getCount()}</strong>
-      <span className="flex justify-center items-center">
+      <strong className="font-bold text-4xl dark:text-white ml-6 mb-2">{getCount()}</strong>
+      <span className="flex justify-end items-center mr-7 mt-1">
         <img
           src={`icon-${isPercentagePositive ? "up" : "down"}.svg`}
           alt={`${isPercentagePositive ? "up" : "down"} icon`}
