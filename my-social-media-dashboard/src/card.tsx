@@ -154,7 +154,7 @@ function New({
         />
         <p className="text-xs dark:text-blue-400 font-bold">{handleName}</p>
       </span>
-      <strong className="text-center text-6xl dark:text-white font-bold tracking-tigh">
+      <strong className="text-center text-6xl dark:text-white font-bold tracking-tight">
         {getFollowersCount()}
       </strong>
       <p className="text-center text-xs text-blue-700 dark:text-blue-400 tracking-widest">
