@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 export function Header({ children }: PropsWithChildren) {
   return (
-    <header className="flex flex-wrap justify-between font-bold m-6 mt-8">
+    <header className="flex flex-wrap justify-between font-bold m-6 mt-8 md:w-192 md:self-center lg:w-280 lg:self-center">
       <div>
         <h1 className="text-xl lg:text-3xl text-dark-blue-800 dark:text-white pt-1.5 font-bold leading-6">
           Social Media Dashboard

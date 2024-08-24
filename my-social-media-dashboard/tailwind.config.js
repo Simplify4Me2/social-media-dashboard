@@ -54,6 +54,10 @@ export default {
       spacing: {
         '53': '13.25rem',
         '54': '13.50rem'
+      },
+      width: {
+        '192': '48rem',
+        '280': '70rem'
       }
     },
   },
