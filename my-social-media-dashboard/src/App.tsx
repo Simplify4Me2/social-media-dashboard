@@ -118,7 +118,7 @@ function App() {
             onChange={toggleDarkMode}
           />
         </Header>
-        <section className="my-4 mx-6 lg:mt-7 lg:w-276 lg:self-center z-10">
+        <article className="my-4 mx-6 lg:mt-7 lg:w-276 lg:self-center z-10">
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {socialMediaData.map((item) => (
               <Card
@@ -130,8 +130,8 @@ function App() {
               />
             ))}
           </ul>
-        </section>
-        <section className="my-4 mx-6 lg:w-276 lg:self-center">
+        </article>
+        <article className="my-4 mx-6 lg:w-276 lg:self-center">
           <h2 className="mt-4 mb-8 lg:mb-6 text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400">
             Overview - Today
           </h2>
@@ -146,7 +146,7 @@ function App() {
               />
             ))}
           </ul>
-        </section>
+        </article>
       </main>
     </>
   );
