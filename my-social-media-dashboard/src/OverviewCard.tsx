@@ -22,36 +22,32 @@ export function OverviewCard({
   }
 
   return (
-    <div className="flex-1 lg:flex-initial min-w-64 w-64 h-32 rounded-b-md flex flex-col justify-evenly mb-4 lg:mb-5 rounded bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer">
-      <div className="flex justify-between">
-        <div className="font-bold text-sm dark:text-blue-400 ml-6 mt-3">
-          {label}
-        </div>
+    <li className="grid grid-cols-2 items-center h-32 rounded bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer">
+      <p className="font-bold text-sm text-blue-700 dark:text-blue-400 ml-6 mt-4">
+        {label}
+      </p>
+      <img
+        src={`icon-${socialMediaProvider}.svg`}
+        alt={`${socialMediaProvider} icon`}
+        className="w-5 h-5 mt-5 justify-self-end mr-8"
+      />
+      <strong className="font-bold text-4xl dark:text-white ml-6 mb-2">
+        {getCount()}
+      </strong>
+      <span className="flex justify-end items-center mr-7 mt-1">
         <img
-          src={`icon-${socialMediaProvider}.svg`}
-          alt={`${socialMediaProvider} icon`}
-          className="w-5 h-5 mt-3 mr-8"
+          src={`icon-${isPercentagePositive ? "up" : "down"}.svg`}
+          alt={`${isPercentagePositive ? "up" : "down"} icon`}
+          className="w-2 h-1 m-0.5"
         />
-      </div>
-      <div className="flex justify-between">
-        <div className="font-bold text-4xl dark:text-white ml-6">
-          {getCount()}
-        </div>
-        <div className="flex flew-row items-center justify-center mr-8 mt-3">
-          <img
-            src={`icon-${isPercentagePositive ? "up" : "down"}.svg`}
-            alt={`${isPercentagePositive ? "up" : "down"} icon`}
-            className="w-2 h-1 m-0.5"
-          />
-          <span
-            className={`text-xs ${
-              isPercentagePositive ? "text-lime" : "text-red"
-            } font-bold`}
-          >
-            {Math.abs(percentage)}%
-          </span>
-        </div>
-      </div>
-    </div>
+        <p
+          className={`text-xs ${
+            isPercentagePositive ? "text-lime" : "text-red"
+          } font-bold`}
+        >
+          {Math.abs(percentage)}%
+        </p>
+      </span>
+    </li>
   );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 type Theme = 'dark' | 'light';
-const THEME_LOCALSTORAGE_KEY = 'theme';
+const THEME_LOCALSTORAGE_KEY = 'SOCIAL_MEDIA_DASHBOARD_THEME';
 
 export function useDarkModeState() {
   const [theme, setTheme] = useState<Theme>(localStorage.getItem(THEME_LOCALSTORAGE_KEY) as Theme || 'light');
