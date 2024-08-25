@@ -122,6 +122,7 @@ function App() {
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {socialMediaData.map((item) => (
               <Card
+                key={item.provider}
                 socialMediaProvider={item.provider}
                 handleName={item.handle}
                 followersCount={item.count}
@@ -131,12 +132,13 @@ function App() {
           </ul>
         </section>
         <section className="my-4 mx-6 lg:w-276 lg:self-center">
-          <h2 className="mt-4 mb-8 text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400">
+          <h2 className="mt-4 mb-8 lg:mb-6 text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400">
             Overview - Today
           </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-6">
             {socialMediaOverviewData.map((item) => (
               <OverviewCard
+                key={`${item.provider} ${item.label}`}
                 socialMediaProvider={item.provider}
                 label={item.label}
                 count={item.count}
