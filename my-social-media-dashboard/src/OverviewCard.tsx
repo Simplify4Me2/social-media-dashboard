@@ -34,20 +34,20 @@ export function OverviewCard({
       <strong className="font-bold text-4xl dark:text-white ml-6 mb-2">
         {getCount()}
       </strong>
-      <span className="flex justify-end items-center mr-7 mt-1">
+      <p className="flex justify-end items-center mr-7 mt-1">
         <img
           src={`icon-${isPercentagePositive ? "up" : "down"}.svg`}
           alt={`${isPercentagePositive ? "up" : "down"} icon`}
           className="w-2 h-1 m-0.5"
         />
-        <p
+        <span
           className={`text-xs ${
             isPercentagePositive ? "text-lime" : "text-red"
           } font-bold`}
         >
           {Math.abs(percentage)}%
-        </p>
-      </span>
+        </span>
+      </p>
     </li>
   );
 }

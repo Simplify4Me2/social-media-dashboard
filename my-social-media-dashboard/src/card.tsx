@@ -49,23 +49,23 @@ export function Card({
     <li
       className={`list-none h-54 ${resolveDecorationStyle()} grid items-start bg-blue-100 dark:bg-dark-blue-400 hover:bg-blue-200 hover:dark:bg-blue-700 hover:cursor-pointer rounded-b-lg`}
     >
-      <span className="flex justify-center items-center mt-1.5">
+      <p className="flex justify-center items-center mt-1.5">
         <img
           src={`icon-${socialMediaProvider}.svg`}
           alt={`${socialMediaProvider} icon`}
           className="w-5 h-5 mr-2"
         />
-        <p className="text-xs dark:text-blue-400 font-bold">{handleName}</p>
-      </span>
-      <span className="flex flex-col">
+        <span className="text-xs dark:text-blue-400 font-bold">{handleName}</span>
+      </p>
+      <p className="flex flex-col">
         <strong className="text-center text-6xl dark:text-white font-bold tracking-tight leading-none">
           {getFollowersCount()}
         </strong>
-        <p className="text-center text-xs text-blue-700 dark:text-blue-400 tracking-widest">
+        <span className="text-center text-xs text-blue-700 dark:text-blue-400 tracking-widest">
           {socialMediaProvider === "youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}
-        </p>
-      </span>
-      <span className="flex justify-center items-center ">
+        </span>
+      </p>
+      <p className="flex justify-center items-center ">
         <img
           src={`icon-${isFollowersCountTodayPositive ? "up" : "down"}.svg`}
           alt={`${isFollowersCountTodayPositive ? "up" : "down"} icon`}
@@ -78,7 +78,7 @@ export function Card({
         >
           {Math.abs(followersCountToday)} Today
         </small>
-      </span>
+      </p>
     </li>
   );
 }
