@@ -135,7 +135,7 @@ function App() {
           <h2 className="mt-4 mb-8 lg:mb-6 text-left font-bold text-2xl leading-none text-blue-700 dark:text-blue-400">
             Overview - Today
           </h2>
-          <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-6">
+          <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-5">
             {socialMediaOverviewData.map((item) => (
               <OverviewCard
                 key={`${item.provider} ${item.label}`}
